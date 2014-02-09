@@ -5,22 +5,22 @@ angular.module('finallapgameSeasonSheetApp')
 
     $scope.teams = [
       {
-        name: "Road Avengers",
+        name: "Yellow Team",
         color: "yellow",
         style: {background: "yellow"},
         drivers: {
-          red: "Saulo Thao",
-          blue: "Miguel Lopez"
+          red: "Driver 1",
+          blue: "Driver 2"
         },
         player: ""
       },
       {
-        name: "Road Avengers",
+        name: "Blue Team",
         color: "blue",
         style: {background: "blue"},
         drivers: {
-          red: "Saulo Thao",
-          blue: "Miguel Lopez"
+          red: "Driver 1",
+          blue: "Driver 2"
         },
         player: ""
       }
@@ -32,6 +32,15 @@ angular.module('finallapgameSeasonSheetApp')
       },
       {
         name: "Race 2"
+      },
+      {
+        name: "Race 3"
+      },
+      {
+        name: "Race 4"
+      },
+      {
+        name: "Race 5"
       }
     ];
 

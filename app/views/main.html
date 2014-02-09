@@ -4,31 +4,35 @@
 </div>
 
 <div class="sheet">
+  <div ng-repeat="team in teams" class="l-team-row clearfix">
 
-  <div ng-repeat="team in teams" class="team-row">
-
-    <div class="team-row-head">
-      <div class="team">
+    <div class="l-team-row-head">
+      <div class="col-label">
         <span class="team-name">{{team.name}}</span>
-        <span class="team-color" ng-style="team.style">{{team.color}}</span>
+        <span class="team-color">({{team.color}})</span>
       </div>
-      <div class="drivers">
-        <div class="label">Drivers</div>
-        <div class="driver driver-red">{{team.drivers.red}} (red)</div>
-        <div class="driver driver-blue">{{team.drivers.blue}} (blue)</div>
+      <div class="col-body">
+        <div></div>
+        <div>{{team.drivers.red}} (red)</div>
+        <div>{{team.drivers.blue}} (blue)</div>
+        <div>Team total</div>
       </div>
     </div>
 
-    <div class="races">
-      <div ng-repeat="race in races" class="race-col">
-        <div class="label">{{race.name}}</div>
-
-        <div class="col race-pos">
-          <div class="label">Pos</div>
-          <div class="cell race-pos-red"></div>
-          <div class="cell race-pos-blue"></div>
+    <div class="l-team-row-races">
+      <div ng-repeat="race in races" class="col race">
+        <div class="col-label">{{race.name}}</div>
+        <div class="col-pile col-pile-cells">
+          <div>Pos</div>
+          <div><span class="col-cell-border"></span></div>
+          <div><span class="col-cell-border"></span></div>
         </div>
-
+        <div class="col-pile col-pile-cells">
+          <div>Points</div>
+          <div><span class="col-cell-border"></span></div>
+          <div><span class="col-cell-border"></span></div>
+          <div><span class="col-cell-border"></span></div>
+        </div>
       </div>
     </div>
 
