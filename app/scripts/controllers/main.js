@@ -5,44 +5,47 @@ angular.module('finallapgameSeasonSheetApp')
 
     $scope.teams = [
       {
-        name: "Yellow Team",
-        color: "yellow",
-        style: {background: "yellow"},
+        name: "Purple Team",
+        color: "purple",
+        style: {background: "purple"},
         drivers: {
           red: "Driver 1",
           blue: "Driver 2"
         },
-        player: ""
+        player: "",
+        active: true
       },
       {
-        name: "Blue Team",
-        color: "blue",
-        style: {background: "blue"},
+        name: "Green Team",
+        color: "green",
+        style: {background: "green"},
         drivers: {
           red: "Driver 1",
           blue: "Driver 2"
         },
-        player: ""
+        player: "",
+        active: true
       }
     ];
 
-    $scope.races = [
-      {
-        name: "Race 1"
-      },
-      {
-        name: "Race 2"
-      },
-      {
-        name: "Race 3"
-      },
-      {
-        name: "Race 4"
-      },
-      {
-        name: "Race 5"
+    $scope.nraces = 7;
+    $scope.races = [];
+
+    $scope.saveSettings = function() {
+      buildRaces($scope.nraces);
+    }
+
+    function buildRaces(nraces) {
+      var no = 1;
+      $scope.races = [];
+      while (no <= nraces) {
+        $scope.races.push({
+          name: 'Race ' + no
+        });
+        no++;
       }
-    ];
+    }
 
-
+    // On init build races.
+    buildRaces($scope.nraces);
   });
