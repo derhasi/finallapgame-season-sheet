@@ -1,23 +1,38 @@
 <div class="header">
   <h1 class="text-muted">finallapgame season sheet</h1>
-  <p>This is an unofficial season sheet for the great <a href="http://www.finallapgame.com/">Final Lap Card Game</a></p>
+  <p>This is an unofficial season sheet for the great <a href="http://www.finallapgame.com/">Final Lap Card Game</a>.</p>
 </div>
 
 <div class="sheet">
 
   <div ng-repeat="team in teams" class="team-row">
 
-    <div class="team" ng-style="team.style">
-      <span class="team-name">{{team.name}}</span>
-      <span class="team-color">{{team.color}}</span>
+    <div class="team-row-head">
+      <div class="team">
+        <span class="team-name">{{team.name}}</span>
+        <span class="team-color" ng-style="team.style">{{team.color}}</span>
+      </div>
+      <div class="drivers">
+        <div class="label">Drivers</div>
+        <div class="driver driver-red">{{team.drivers.red}} (red)</div>
+        <div class="driver driver-blue">{{team.drivers.blue}} (blue)</div>
+      </div>
     </div>
 
     <div class="races">
       <div ng-repeat="race in races" class="race-col">
-        {{race.name}}
+        <div class="label">{{race.name}}</div>
+
+        <div class="col race-pos">
+          <div class="label">Pos</div>
+          <div class="cell race-pos-red"></div>
+          <div class="cell race-pos-blue"></div>
+        </div>
+
       </div>
     </div>
 
+    <div class="clearfix"></div>
   </div>
 </div>
 

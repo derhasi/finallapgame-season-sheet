@@ -1,11 +1,47 @@
+// Import sass libraries.
+@import "compass";
+@import "singularitygs";
 
+// Font.
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
 
-.team-row {
-  width: 100%;
-  margin: 0;
-  padding: 0;
+$grids: 12;
+$gutters: 1/3;
+$output: 'float';
+
+$head-cols: 2;
+$body-cols: $grids - $head-cols;
+
+$cell-size: 20px;
+
+body {
+  font-family: 'Open Sans', sans-serif;
 }
 
-.team {
-  width: 50px;
+.clearfix {
+  @include clearfix();
+}
+
+.team-row {
+  clear: both;
+  margin-bottom: 1em;
+}
+
+.team-row-head {
+  background: green;
+  @include grid-span($head-cols, 0);
+}
+.races {
+  background: orange;
+  @include grid-span($body-cols, $head-cols);
+}
+
+.race-col {
+  @include float-span(2);
+}
+
+.cell {
+  border: 1px solid black;
+  width: $cell-size;
+  height: $cell-size;
 }
