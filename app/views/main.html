@@ -9,6 +9,9 @@
       <div ng-repeat="team in teams">
         {{team.name}} <input type="checkbox" ng-model="team.active" ng-change="saveSettings()">
       </div>
+      <h2>Info</h2>
+      <h3>Development</h3>
+      <p>The source code of this season sheet generator is <a href="https://github.com/derhasi/finallapgame-season-sheet">hosted on github</a>.</p>
     </form>
   </div>
 </div>
@@ -18,10 +21,13 @@
     <nav class="main-nav  no-print">
       <ul class="main-menu">
         <li><a href="http://www.finallapgame.com/" target="_blank">The card game</a></li>
-        <li><a href="" ng-click="toggleSettings()" class="settings-link no-print">Settings</a></li>
+        <li><a href="" ng-click="toggleSettings()" class="settings-link no-print">Settings & Info</a></li>
       </ul>
     </nav>
-    <p class="no-print">This is an unofficial season sheet for the great <a href="http://www.finallapgame.com/" target="_blank">Final Lap Card Game</a>.</p>
+    <p class="no-print">This is an unofficial season sheet for the great
+      <a href="http://www.finallapgame.com/" target="_blank">Final Lap Card Game</a>.
+      You may post feature request and issues in <a href="https://github.com/derhasi/finallapgame-season-sheet/issues"> the project's issue queue</a>.
+    </p>
   </div>
   <div class="sheet">
     <div ng-repeat="team in teams" class="l-team-row clearfix" ng-if="team.active">
