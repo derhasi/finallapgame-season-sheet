@@ -317,6 +317,25 @@ module.exports = function (grunt) {
         'svgmin'
       ]
     },
+    buildcontrol: {
+      options: {
+        dir: 'dist',
+        commit: true,
+        push: true,
+        message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%',
+      },
+//      pages: {
+//        options: {
+//          remote: 'git@github.com:example_user/example_webapp.git',
+//          branch: 'gh-pages'
+//        }
+//      },
+      local: {
+        options: {
+          branch: 'gh-pages'
+        }
+      }
+    },
 
     // By default, your `index.html`'s <!-- Usemin block --> will take care of
     // minification. These next options are pre-configured if you do not wish
@@ -396,7 +415,8 @@ module.exports = function (grunt) {
     'uglify',
     'rev',
     'usemin',
-    'htmlmin'
+    'htmlmin',
+    'buildcontrol:local'
   ]);
 
   grunt.registerTask('default', [
