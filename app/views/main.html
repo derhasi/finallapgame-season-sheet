@@ -7,11 +7,15 @@
   <form>
     <label>number of races ({{settings.races}})</label>
     <input type="number" ng-model="settings.races" ng-change="saveSettings()">
+    <label>Teams</label>
+    <div ng-repeat="team in teams">
+      {{team.name}} <input type="checkbox" ng-model="team.active" ng-change="saveSettings()">
+    </div>
   </form>
 </div>
 
 <div class="sheet">
-  <div ng-repeat="team in teams" class="l-team-row clearfix">
+  <div ng-repeat="team in teams" class="l-team-row clearfix" ng-if="team.active">
 
     <div class="l-team-row-head">
       <div class="col-label">

@@ -10,9 +10,53 @@ angular.module('finallapgameSeasonSheetApp')
 
     $scope.teams = [
       {
+        name: "Yellow Team",
+        color: "yellow",
+        style: {background: "yellow"},
+        drivers: {
+          red: "Driver 1",
+          blue: "Driver 2"
+        },
+        player: "",
+        active: true
+      },
+      {
+        name: "Orange Team",
+        color: "orange",
+        style: {background: "orange"},
+        drivers: {
+          red: "Driver 1",
+          blue: "Driver 2"
+        },
+        player: "",
+        active: true
+      },
+      {
+        name: "Red Team",
+        color: "red",
+        style: {background: "red"},
+        drivers: {
+          red: "Driver 1",
+          blue: "Driver 2"
+        },
+        player: "",
+        active: true
+      },
+      {
         name: "Purple Team",
         color: "purple",
         style: {background: "purple"},
+        drivers: {
+          red: "Driver 1",
+          blue: "Driver 2"
+        },
+        player: "",
+        active: true
+      },
+      {
+        name: "Blue Team",
+        color: "blue",
+        style: {background: "blue"},
         drivers: {
           red: "Driver 1",
           blue: "Driver 2"
