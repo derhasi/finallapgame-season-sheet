@@ -15,15 +15,24 @@ $grids: 12;
 $gutters: 0;
 $output: 'float';
 
+$color-bg: #e4fffa;
+$color-second: #ffcc00;
+$color-gray: lightgray;
+
 $head-cols: 2;
 $body-cols: $grids - $head-cols;
 
 $cell-size: 20px;
 
 body {
+  color: black;
   font-family: 'Open Sans', sans-serif;
   font-size: $base-font-size;
 }
+a {
+  color: black;
+}
+
 .clearfix {
   @include clearfix();
 }
@@ -32,23 +41,82 @@ body {
   margin-left: $base-font-size;
 }
 
+h1 {
+  display: block;
+  float: left;
+  line-height: $base-font-size * 2;
+  height: $base-font-size * 2;
+  font-size: $base-font-size * 2;
+  padding: 0;
+  margin: $base-font-size * 0.5 0;
+}
+nav.main-nav {
+  display: block;
+  float: left;
+  margin-left: 120px;
+  min-height: $base-font-size * 2;
+  line-height: $base-font-size * 2;
+  vertical-align: middle;
+  clear: right;
+}
+ul.main-menu {
+  @include horizontal-list();
+
+  a {
+    text-decoration: none;
+    background: $color-gray;
+    display: block;
+    padding: 0.5 * $base-font-size $base-font-size;
+    @include border-radius($base-font-size * 0.5);
+    &:hover {
+      background: $color-second;
+      color: black;
+    }
+  }
+}
+
+.header {
+  padding-bottom: 2 * $base-font-size;
+}
+.header > p {
+  padding: $base-font-size 0;
+  clear: both;
+}
+
 .settings {
+  position: absolute;
+  top: 0;
+  right: 0;
   display: block;
   @include transition(all 1s);
   opacity: 1;
-  height: 200px;
+  height: 100%;
+  width: 200px;
   overflow: hidden;
   padding: 1em;
+  z-index: 100;
+  background: $color-bg;
+  border-left: 5px solid $color-second;
+  @include box-shadow(0 0 20px 0 $color-gray);
 }
 .settings-visible {}
 .settings-hide {
   opacity: 0;
-  height: 0px;
+  width: 0%;
+}
+.settings-content {
+  width: 200px;
+}
+.close-link {
+  text-align: right;
 }
 
 // Do not print some parts of the webpage.
 @media print
 {
+  .header {
+    padding: 0;
+  }
   .no-print, .no-print *
   {
     display: none !important;
