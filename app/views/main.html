@@ -5,9 +5,8 @@
 
 <div class="settings">
   <form>
-    <label>number of races ({{nraces}})</label>
-    <input type="number" ng-model="nraces" min="1" required>
-    <a ng-click="saveSettings()">Save settings</a>
+    <label>number of races ({{settings.races}})</label>
+    <input type="number" ng-model="settings.races" ng-change="saveSettings()">
   </form>
 </div>
 

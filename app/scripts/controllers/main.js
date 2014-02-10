@@ -1,7 +1,12 @@
 'use strict';
 
 angular.module('finallapgameSeasonSheetApp')
-  .controller('MainCtrl', function ($scope) {
+  .controller('MainCtrl', ['$scope', function ($scope) {
+
+    $scope.showSettings = true;
+    $scope.settings = {
+      races: 7
+    };
 
     $scope.teams = [
       {
@@ -28,11 +33,10 @@ angular.module('finallapgameSeasonSheetApp')
       }
     ];
 
-    $scope.nraces = 7;
     $scope.races = [];
 
     $scope.saveSettings = function() {
-      buildRaces($scope.nraces);
+      buildRaces($scope.settings.races);
     }
 
     function buildRaces(nraces) {
@@ -47,5 +51,5 @@ angular.module('finallapgameSeasonSheetApp')
     }
 
     // On init build races.
-    buildRaces($scope.nraces);
-  });
+    buildRaces($scope.settings.races);
+  }]);
