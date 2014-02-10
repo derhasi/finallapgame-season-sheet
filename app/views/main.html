@@ -3,7 +3,8 @@
   <p>This is an unofficial season sheet for the great <a href="http://www.finallapgame.com/">Final Lap Card Game</a>.</p>
 </div>
 
-<div class="settings">
+<a href="" ng-click="toggleSettings()" class="no-print">Settings</a>
+<div class="settings" ng-class="'no-print settings settings-' + settings.status">
   <form>
     <label>number of races ({{settings.races}})</label>
     <input type="number" ng-model="settings.races" ng-change="saveSettings()">

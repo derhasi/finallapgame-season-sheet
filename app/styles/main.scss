@@ -31,3 +31,26 @@ body {
 .race {
   margin-left: $base-font-size;
 }
+
+.settings {
+  display: block;
+  @include transition(all 1s);
+  opacity: 1;
+  height: 200px;
+  overflow: hidden;
+  padding: 1em;
+}
+.settings-visible {}
+.settings-hide {
+  opacity: 0;
+  height: 0px;
+}
+
+// Do not print some parts of the webpage.
+@media print
+{
+  .no-print, .no-print *
+  {
+    display: none !important;
+  }
+}

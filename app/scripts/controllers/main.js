@@ -3,8 +3,8 @@
 angular.module('finallapgameSeasonSheetApp')
   .controller('MainCtrl', ['$scope', function ($scope) {
 
-    $scope.showSettings = true;
     $scope.settings = {
+      status: "hide",
       races: 7
     };
 
@@ -78,6 +78,10 @@ angular.module('finallapgameSeasonSheetApp')
     ];
 
     $scope.races = [];
+
+    $scope.toggleSettings = function() {
+      $scope.settings.status = ($scope.settings.status == "hide") ? "show" : "hide";
+    };
 
     $scope.saveSettings = function() {
       buildRaces($scope.settings.races);
